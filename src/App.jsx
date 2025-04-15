@@ -1,10 +1,16 @@
+import { Anadir } from './Anadir'
 import './App.css'
+import { Lista } from './Lista'
+import { Boton } from './Boton'
 
 function App() {
-
+let items = [];
   return (
     <>
-      hola
+      <Anadir/>
+      <Boton nombreFuncion="Borrar todo"/>
+      <Boton nombreFuncion="Ver tarea más rápida"/>
+      <Lista lista={items}/>
     </>
   )
 }
