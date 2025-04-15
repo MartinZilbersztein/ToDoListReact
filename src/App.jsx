@@ -3,8 +3,8 @@ import './App.css'
 import { Lista } from './Lista'
 import { Boton } from './Boton'
 
+let items = ["hola", "adsasd"];
 function App() {
-let items = [];
   return (
     <>
       <Anadir/>

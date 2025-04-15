@@ -17,7 +17,6 @@ export const Lista = ({items}) => {
                 </tr>
             </thead>
             <tbody id="tableBody">
-
             </tbody>
         </table>
     </>
