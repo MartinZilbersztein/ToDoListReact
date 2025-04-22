@@ -1,17 +1,15 @@
 import React from 'react'
-import { Borrar } from './Borrar'
-import { Check } from './Check'
 
-export const Tarea = () => {
+export const Tarea = ({item}) => {
   return (
     <>
         <tr>
-            <th scope="row"></th>
-            <Check/>
-            <td>gola</td>
-            <td>hola</td>
-            <td>hola</td>
-            <Borrar/>
+            <td>{item.id}</td>
+            <td><input type="checkbox" /></td>
+            <td>{item.nombre}</td>
+            <td>{item.fechaCreacion}</td>
+            <td>{item.fechaRealizacion}</td>
+            <td><img width="10%" class="borrar" src="src/images/TachoBorrar.png"/></td>
         </tr>
     </>
   )

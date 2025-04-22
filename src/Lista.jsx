@@ -1,11 +1,11 @@
 import React from 'react'
 import { Tarea } from './Tarea'
-import {useState} from 'react'
 
-export const Lista = ({items}) => {
+export const Lista = ({lista}) => {
+    
     return (
     <>
-        <table class="table table-hover table-responsive">
+        <table className="table table-hover table-responsive">
             <thead>
                 <tr>
                     <th scope="col">Id</th>
@@ -17,6 +17,9 @@ export const Lista = ({items}) => {
                 </tr>
             </thead>
             <tbody id="tableBody">
+                {lista.map(item=>(
+                    <Tarea item={item} />
+                ))}
             </tbody>
         </table>
     </>

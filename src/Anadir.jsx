@@ -1,14 +1,30 @@
 import React from 'react'
-import {Input} from './Input'
-import { Boton } from './Boton'
-import { useState } from 'react';
 
-export const Anadir = (items) => {
+export const Anadir = ({setTareas,tareas}) => {
+
+  const agregarTarea = ()=>{
+    //obtener valor del input
+    let nombreTarea = document.getElementById('tarea').value;
+    
+    //crear el objeto nuevo
+    const tarea = {
+      id: tareas.length+1,
+      check:false,
+      nombre:nombreTarea,
+      fechaCreacion:new Date().toLocaleString(),
+      fechaRealizacion:"N/A"
+    }
+
+    //agrego al array de tareas    
+    let aux = [...tareas,tarea];    
+    setTareas(aux);
+  }
+
   return (
     <>
         <h1>To-do</h1>
-        <Input/>
-        <Boton nombreFuncion="Enviar" array={items} />
+        <input className="agregar" type="text" id="tarea" />
+        <input onClick={()=>agregarTarea()} className="enviar" type="button" value="Enviar" />
     </>
   )
 }

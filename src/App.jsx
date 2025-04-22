@@ -1,16 +1,16 @@
 import { Anadir } from './Anadir'
 import './App.css'
 import { Lista } from './Lista'
-import { Boton } from './Boton'
+import { useState } from 'react'
 
-let items = ["hola", "adsasd"];
 function App() {
+  const [tareas,setTareas] = useState([]);
+
   return (
     <>
-      <Anadir lista={items}/>
-      <Boton nombreFuncion="Borrar todo"/>
-      <Boton nombreFuncion="Ver tarea más rápida"/>
-      <Lista lista={items}/>
+      <Anadir tareas={tareas} setTareas={setTareas}/>
+      
+      <Lista lista={tareas}/>
     </>
   )
 }
