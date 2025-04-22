@@ -2,7 +2,7 @@ import React from 'react'
 import { Borrar } from './Borrar'
 import { Check } from './Check'
 
-export const Tarea = () => {
+export const Tarea = (items) => {
   return (
     <>
         <tr>
@@ -11,7 +11,7 @@ export const Tarea = () => {
             <td>gola</td>
             <td>hola</td>
             <td>hola</td>
-            <Borrar/>
+            <Borrar id={items.id} lista={items}/>
         </tr>
     </>
   )
