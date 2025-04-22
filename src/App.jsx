@@ -7,7 +7,7 @@ let items = ["hola", "adsasd"];
 function App() {
   return (
     <>
-      <Anadir/>
+      <Anadir lista={items}/>
       <Boton nombreFuncion="Borrar todo"/>
       <Boton nombreFuncion="Ver tarea más rápida"/>
       <Lista lista={items}/>
