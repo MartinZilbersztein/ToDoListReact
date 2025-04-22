@@ -10,7 +10,7 @@ function App() {
     <>
       <Anadir tareas={tareas} setTareas={setTareas}/>
       
-      <Lista lista={tareas}/>
+      <Lista lista={tareas} setTareas={setTareas}/>
     </>
   )
 }

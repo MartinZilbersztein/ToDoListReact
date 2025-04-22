@@ -1,7 +1,7 @@
 import React from 'react'
 import { Tarea } from './Tarea'
 
-export const Lista = ({lista}) => {
+export const Lista = ({lista, setTareas}) => {
     
     return (
     <>
@@ -18,7 +18,7 @@ export const Lista = ({lista}) => {
             </thead>
             <tbody id="tableBody">
                 {lista.map(item=>(
-                    <Tarea item={item} />
+                    <Tarea item={item} setTareas={setTareas} lista={lista} />
                 ))}
             </tbody>
         </table>
