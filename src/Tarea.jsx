@@ -5,8 +5,11 @@ export const Tarea = ({item, setTareas,lista}) => {
     let indice = item.id;
     let aux = [...lista];
     aux.splice(indice-1,1);
-    for(let i = indice-1; i <aux.length; i++){
+    let i = indice-1;
+    while (i>= 0 && i<aux.length)
+    {
       aux[i].id--;
+      i++;
     }
     setTareas(aux);
   }
