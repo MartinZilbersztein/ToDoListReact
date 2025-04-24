@@ -18,6 +18,9 @@ export const Anadir = ({setTareas,tareas}) => {
     //agrego al array de tareas    
     let aux = [...tareas,tarea];    
     setTareas(aux);
+
+    //borrar el contenido del formulario
+    document.getElementById('tarea').value = "";
   }
 
   return (
