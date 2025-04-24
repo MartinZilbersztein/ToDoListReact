@@ -1,18 +1,17 @@
 import { Anadir } from './Anadir'
-import './App.css'
 import { BotonesExtra } from './BotonesExtra';
 import { Lista } from './Lista'
 import { useState } from 'react'
 
 function App() {
-  const [tareas,setTareas] = useState([]);
+  const [tareas,setTareas] = useState([]);//Inicializado como array vacío
 
   return (
-    <>
-      <Anadir tareas={tareas} setTareas={setTareas}/>
-      <BotonesExtra lista={tareas} setTareas={setTareas}/>
-      <Lista lista={tareas} setTareas={setTareas}/>
-    </>
+      <div className="container">
+          <Anadir tareas={tareas} setTareas={setTareas}/>
+          <BotonesExtra lista={tareas} setTareas={setTareas}/>
+          <Lista lista={tareas} setTareas={setTareas}/>
+      </div>
   )
 }
 
