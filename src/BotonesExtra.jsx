@@ -1,11 +1,15 @@
 import React from 'react'
-import { Boton } from './Boton'
 
-export const BotonesExtra = () => {
+export const BotonesExtra = ({lista, setTareas}) => {
+  const borrarTodo = () =>{
+    let aux = [...lista];
+    aux = [];
+    setTareas(aux);
+  }
   return (
     <>
-        <Boton/>
-        <Boton/>
+        <input onClick={()=>borrarTodo()} className="enviar" type="button" value="Borrar todo" />
+        <input className="enviar" type="button" value="Calcular tarea" />
     </>
   )
 }

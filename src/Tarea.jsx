@@ -3,13 +3,9 @@ import React from 'react'
 export const Tarea = ({item, setTareas,lista}) => {
   const eliminarTarea = () =>{
     let indice = item.id;
+    console.log(indice);
     let aux = [...lista];
-    console.log(aux[item].nombre);
-    aux.splice(indice,1);
-    for(let i = indice; i < lista.length; i++){
-      console.log(aux[i]);
-      // aux[i].id--;
-    }    
+    aux.pop(indice,1);
     setTareas(aux);
   }
   const chequearRealizacion = ({lista, item})=>{
