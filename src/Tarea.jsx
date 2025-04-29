@@ -25,9 +25,6 @@ export const Tarea = ({item, setTareas,lista}) => {
       aux[item.id-1].fechaRealizacion = "N/A";
       aux[item.id-1].checked = false;
     }
-
-    
-    console.log("marcó");
     setTareas(aux);
   }
 

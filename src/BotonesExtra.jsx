@@ -33,24 +33,13 @@ const calcularTarea = () =>{
       if (item.fechaRealizacion.getTime()-item.fechaCreacion.getTime() < tareaRapida.calculo)
       {
         tareaRapida.tarea = item.nombre;
-        console.log(tareaRapida.tarea);
         tareaRapida.calculo = item.fechaRealizacion.getTime()-item.fechaCreacion.getTime();
       }
     }
   })
   setParrafo("La tarea más rápida en realizarse fue " + tareaRapida.tarea + ", que tardó " + ((tareaRapida.calculo.toLocaleString() % 60000) / 1000).toFixed(0));  
 }
-    
-    
-    /*lista.map(item => {
-      if((item.fechaRealizacion - item.fechaCreacion)<masRapida)
-      {
-        masRapida=item.fechaRealizacion - item.fechaCreacion;
-        idMasRapida=item.id;
-      }})
-      console.log(idMasRapida);
-      return idMasRapida;*/
-  
+     
 
   return (
     <>
