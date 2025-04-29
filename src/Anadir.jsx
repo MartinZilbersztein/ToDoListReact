@@ -11,7 +11,7 @@ export const Anadir = ({setTareas,tareas}) => {
       id: tareas.length+1,
       checked:false,
       nombre:nombreTarea,
-      fechaCreacion:new Date().toLocaleString(),
+      fechaCreacion:new Date(),
       fechaRealizacion:"N/A"
     }
 

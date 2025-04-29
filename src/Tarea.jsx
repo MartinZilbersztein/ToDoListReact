@@ -17,7 +17,7 @@ export const Tarea = ({item, setTareas,lista}) => {
     let aux = [...lista];
     if (aux[item.id-1].fechaRealizacion == "N/A") 
     {
-      aux[item.id-1].fechaRealizacion = new Date().toLocaleString();
+      aux[item.id-1].fechaRealizacion = new Date();
     }
     else 
     {
@@ -35,8 +35,8 @@ export const Tarea = ({item, setTareas,lista}) => {
             <td id="indice">{item.id}</td>
             <td><input id={item.id} type="checkbox" onClick={()=>marcarRealizado({item, lista})}/></td>
             <td>{item.nombre}</td>
-            <td>{item.fechaCreacion}</td>
-            <td>{item.fechaRealizacion}</td>
+            <td>{item.fechaCreacion.toLocaleString()}</td>
+            <td>{item.fechaRealizacion.toLocaleString()}</td>
             <td><img width="10%" className="borrar" src="src/images/TachoBorrar.png" onClick={()=>eliminarTarea(item.id)}/></td>
         </tr>
     </>
