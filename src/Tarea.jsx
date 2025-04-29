@@ -13,16 +13,21 @@ export const Tarea = ({item, setTareas,lista}) => {
     }
     setTareas(aux);
   }
-  const chequearRealizacion = ({lista, item})=>{
+  const marcarRealizado = ({item, lista})=>{
     let aux = [...lista];
-    if (aux[item.id] != "N/A")
+    if (aux[item.id-1].fechaRealizacion == "N/A") 
     {
-      item.fechaRealizacion = new Date().toLocaleString();
+      aux[item.id-1].fechaRealizacion = new Date();
+      aux[item.id-1].checked = true;
     }
     else 
     {
-      item.fechaRealizacion = "N/A";
+      aux[item.id-1].fechaRealizacion = "N/A";
+      aux[item.id-1].checked = false;
     }
+
+    
+    console.log("marcó");
     setTareas(aux);
   }
 
@@ -30,10 +35,10 @@ export const Tarea = ({item, setTareas,lista}) => {
     <>
         <tr>
             <td id="indice">{item.id}</td>
-            <td><input id="check" type="checkbox" onClick={({lista,item})=>chequearRealizacion}/></td>
+            <td><input id={item.id} type="checkbox" checked={item.checked} onClick={()=>marcarRealizado({item, lista})}/></td>
             <td>{item.nombre}</td>
-            <td>{item.fechaCreacion}</td>
-            <td>{item.fechaRealizacion}</td>
+            <td>{item.fechaCreacion.toLocaleString()}</td>
+            <td>{item.fechaRealizacion.toLocaleString()}</td>
             <td><img width="10%" className="borrar" src="src/images/TachoBorrar.png" onClick={()=>eliminarTarea(item.id)}/></td>
         </tr>
     </>
