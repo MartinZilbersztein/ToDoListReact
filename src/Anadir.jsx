@@ -9,7 +9,7 @@ export const Anadir = ({setTareas,tareas}) => {
     //crear el objeto nuevo
     const tarea = {
       id: tareas.length+1,
-      check:false,
+      checked:false,
       nombre:nombreTarea,
       fechaCreacion:new Date().toLocaleString(),
       fechaRealizacion:"N/A"
