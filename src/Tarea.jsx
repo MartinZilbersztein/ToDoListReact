@@ -18,10 +18,12 @@ export const Tarea = ({item, setTareas,lista}) => {
     if (aux[item.id-1].fechaRealizacion == "N/A") 
     {
       aux[item.id-1].fechaRealizacion = new Date();
+      aux[item.id-1].checked = true;
     }
     else 
     {
       aux[item.id-1].fechaRealizacion = "N/A";
+      aux[item.id-1].checked = false;
     }
 
     
@@ -33,7 +35,7 @@ export const Tarea = ({item, setTareas,lista}) => {
     <>
         <tr>
             <td id="indice">{item.id}</td>
-            <td><input id={item.id} type="checkbox" onClick={()=>marcarRealizado({item, lista})}/></td>
+            <td><input id={item.id} type="checkbox" checked={item.checked} onClick={()=>marcarRealizado({item, lista})}/></td>
             <td>{item.nombre}</td>
             <td>{item.fechaCreacion.toLocaleString()}</td>
             <td>{item.fechaRealizacion.toLocaleString()}</td>
