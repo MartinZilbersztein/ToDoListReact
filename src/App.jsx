@@ -5,7 +5,6 @@ import { useState } from 'react'
 
 function App() {
   const [tareas,setTareas] = useState([]);//Inicializado como array vacío
-
   return (
       <div className="container">
           <Anadir tareas={tareas} setTareas={setTareas}/>
