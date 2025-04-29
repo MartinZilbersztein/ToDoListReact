@@ -38,7 +38,7 @@ const calcularTarea = () =>{
       }
     }
   })
-  setParrafo("La tarea más rápida en realizarse fue " + tareaRapida.tarea + ", que tardó " + tareaRapida.calculo.toLocaleString());  
+  setParrafo("La tarea más rápida en realizarse fue " + tareaRapida.tarea + ", que tardó " + ((tareaRapida.calculo.toLocaleString() % 60000) / 1000).toFixed(0));  
 }
     
     
