@@ -19,18 +19,21 @@ export const Tarea = ({item, setTareas,lista}) => {
     {
       aux[item.id-1].fechaRealizacion = new Date();
       aux[item.id-1].checked = true;
+      document.getElementById('todo').classList.add("resuelto");
+
     }
     else 
     {
       aux[item.id-1].fechaRealizacion = "N/A";
       aux[item.id-1].checked = false;
+      document.getElementById('todo').classList.remove("resuelto");
     }
     setTareas(aux);
   }
 
   return (
     <>
-        <tr>
+        <tr id="todo">
             <td id="indice">{item.id}</td>
             <td><input id={item.id} type="checkbox" checked={item.checked} onClick={()=>marcarRealizado({item, lista})}/></td>
             <td>{item.nombre}</td>
