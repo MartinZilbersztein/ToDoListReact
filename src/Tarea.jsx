@@ -39,7 +39,7 @@ export const Tarea = ({item, setTareas,lista}) => {
             <td>{item.nombre}</td>
             <td>{item.fechaCreacion.toLocaleString()}</td>
             <td>{item.fechaRealizacion.toLocaleString()}</td>
-            <td><img width="10%" className="borrar" src="src/images/TachoBorrar.png" onClick={()=>eliminarTarea(item.id)}/></td>
+            <td><img width="10%" className="borrar" src="./images/TachoBorrar.png" onClick={()=>eliminarTarea(item.id)}/></td>
         </tr>
     </>
   )
